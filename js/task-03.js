@@ -14,14 +14,14 @@ const images = [
 ];
 
 const ul = document.querySelector(".gallery");
+let html = "";
 
 images.forEach((image) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-
-  img.src = image.url;
-  img.alt = image.alt;
-
-  li.appendChild(img);
-  ul.appendChild(li);
+  html += `
+    <li>
+      <img src="${image.url}" alt="${image.alt}">
+    </li>
+  `;
 });
+
+ul.innerHTML = html;
